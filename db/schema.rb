@@ -19,20 +19,6 @@ ActiveRecord::Schema.define(version: 0) do
     t.text   "preview", limit: 4294967295
   end
 
-  create_table "articles_categories", primary_key: ["articles_id", "categories_id"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "articles_id",   null: false, unsigned: true
-    t.integer "categories_id", null: false, unsigned: true
-    t.index ["articles_id"], name: "fk_articles_has_categories_articles1_idx", using: :btree
-    t.index ["categories_id"], name: "fk_articles_has_categories_categories1_idx", using: :btree
-  end
-
-  create_table "articles_tags", primary_key: ["articles_id", "tags_id"], force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "articles_id", null: false, unsigned: true
-    t.integer "tags_id",     null: false, unsigned: true
-    t.index ["articles_id"], name: "fk_articles_has_tags_articles1_idx", using: :btree
-    t.index ["tags_id"], name: "fk_articles_has_tags_tags1_idx", using: :btree
-  end
-
   create_table "categories", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", limit: 45
   end
@@ -49,9 +35,4 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "name", limit: 75
   end
 
-  add_foreign_key "articles_categories", "articles", column: "articles_id", name: "fk_articles_has_categories_articles1"
-  add_foreign_key "articles_categories", "categories", column: "categories_id", name: "fk_articles_has_categories_categories1"
-  add_foreign_key "articles_tags", "articles", column: "articles_id", name: "fk_articles_has_tags_articles1"
-  add_foreign_key "articles_tags", "tags", column: "tags_id", name: "fk_articles_has_tags_tags1"
-  add_foreign_key "coments", "articles", column: "articles_id", name: "fk_coment_articles1"
 end
