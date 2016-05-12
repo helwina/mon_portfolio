@@ -1,3 +1,2 @@
-class Tag < ActiveRecord::Base
-
+class Tag < ApplicationRecord
 end

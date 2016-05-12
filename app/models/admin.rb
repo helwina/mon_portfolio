@@ -1,3 +1,2 @@
-class Admin < ActiveRecord::Base
-
+class Admin < ApplicationRecord
 end

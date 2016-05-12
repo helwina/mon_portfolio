@@ -1,3 +1,2 @@
-class Coment < ActiveRecord::Base
-
+class Coment < ApplicationRecord
 end

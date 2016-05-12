@@ -1,3 +1,2 @@
-class Categorie < ActiveRecord::Base
-
+class Categorie < ApplicationRecord
 end
