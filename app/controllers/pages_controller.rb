@@ -1,13 +1,13 @@
 class PagesController < ApplicationController
-  def home
-  end
+	def home
+	end
 
-  def portfolio
-  end
+	def portfolio
+	end
 
-  def blog
-  end
+	def blog
+	end
 
-  def contact
-  end
+	def contact
+	end
 end
