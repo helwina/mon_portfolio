@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
-  get 'portfolio'       =>'pages#portfolio'
-  get 'contact'         =>'pages#contact'
-  get 'blog'            =>'articles#blog'
-  get 'show'            =>'articles#show'
+  get 'portfolio'                      =>'pages#portfolio'
+  get 'blog'                           =>'articles#blog'
+  get 'contact'                        =>'pages#contact'
+  get 'blog/:title'                    =>'articles#show',as:'show_details'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

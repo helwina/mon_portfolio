@@ -1,2 +1,8 @@
-<h1>Articles#blog</h1>
-<p>Find me in app/views/articles/blog.html.erb</p>
+<% @page_title = 'blog' %>
+<h1>Blog</h1>
+<p>bientot des aricles ici</p>
+  <% @articles.each do |article| %>
+      <p><%= article.title %></p>
+      <p><%= article.preview %></p>
+      <%= link_to('continuer a lire', show_details_url(article.title))%>
+  <% end %>
