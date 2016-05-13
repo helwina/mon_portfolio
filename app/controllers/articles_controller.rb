@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   def blog
     @articles = Article.all
-
   end
 
   def show
